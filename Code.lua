@@ -739,8 +739,6 @@ local function SetupLayout(layout)
 		E.db["sle"]["minimap"]["instance"]["font"] = "HaxrCorp12cyr"
 		E.db["sle"]["minimap"]["instance"]["fontOutline"] = "MONOCHROMEOUTLINE"
 		E.db["sle"]["minimap"]["instance"]["fontSize"] = 17
-		E.db["sle"]["minimap"]["mapicons"]["iconsize"] = 21
-		E.db["sle"]["minimap"]["mapicons"]["iconperrow"] = 1
 		E.db["sle"]["misc"]["threat"]["position"] = "LeftChatDataPanel"
 		E.db["sle"]["nameplates"]["targetcount"]["enable"] = true
 		E.db["sle"]["pvp"]["autorelease"] = true
