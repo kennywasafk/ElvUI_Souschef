@@ -2,13 +2,12 @@ local E, L, V, P, G = unpack(ElvUI);
 local SousUI = E:GetModule('Souschef');
 
 function SousUI:LoadGnosisProfile(layout)
-	local font, fontsize
-	font = "Expressway"
-	fontsize = 12
 	
-	GnosisDB = nil
-	GnosisConfigs = {
-	["Souschef's UI"] = {
+	E.db["unitframe"]["units"]["player"]["castbar"]["enable"] = false
+	E.db["unitframe"]["units"]["target"]["castbar"]["enable"] = false
+	E.db["unitframe"]["units"]["boss"]["castbar"]["enable"] = false
+
+	GnosisCharConfig = {
 		["channeledspells"] = {
 			["Fists of Fury"] = {
 				["bcombattext"] = false,
@@ -795,7 +794,5 @@ function SousUI:LoadGnosisProfile(layout)
 			["iTimerScanEvery"] = 150,
 			["bAddonEn"] = true,
 		},
-	},
-}
-
+	}
 end
