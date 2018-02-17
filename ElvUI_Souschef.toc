@@ -1,0 +1,19 @@
+## Interface: 70300
+## Author: Except
+## Version: 1.02
+## Title: |cff1784d1ElvUI|r |cff4beb2cSouschef|r
+## Notes: Contains layouts from Souschef
+## RequiredDeps: ElvUI
+## OptionalDeps: ElvUI_SLE, ElvUI_EverySecondCounts, ElvUI_CustomTweaks
+## DefaultState: enabled
+
+Libs\LibStub.lua
+Libs\CallbackHandler-1.0.lua
+Libs\LibSharedMedia-3.0.lua
+Media\Media.lua
+Core.lua
+Addons\BigWigs.lua
+Addons\Details.lua
+Addons\Parrot.lua
+Addons\Gnosis.lua
+Code.lua
