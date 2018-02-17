@@ -46,6 +46,7 @@ local function SetupLayout(layout)
 		E.private["sle"]["module"]["screensaver"] = true
 		E.private["sle"]["minimap"]["mapicons"]["enable"] = true
 		E.private["sle"]["minimap"]["mapicons"]["barenable"] = true
+		E.private["sle"]["minimap"]["mapicons"]["template"] = "NoBackdrop"
 		E.private["sle"]["skins"]["merchant"]["enable"] = true
 		E.private["sle"]["skins"]["merchant"]["style"] = "List"
 		E.private["sle"]["install_complete"] = "3.34"
@@ -739,6 +740,9 @@ local function SetupLayout(layout)
 		E.db["sle"]["minimap"]["instance"]["font"] = "HaxrCorp12cyr"
 		E.db["sle"]["minimap"]["instance"]["fontOutline"] = "MONOCHROMEOUTLINE"
 		E.db["sle"]["minimap"]["instance"]["fontSize"] = 17
+		E.db["sle"]["minimap"]["mapicons"]["iconsize"] = 25
+		E.db["sle"]["minimap"]["mapicons"]["spacing"] = 1
+		E.db["sle"]["minimap"]["mapicons"]["iconperrow"] = 1
 		E.db["sle"]["misc"]["threat"]["position"] = "LeftChatDataPanel"
 		E.db["sle"]["nameplates"]["targetcount"]["enable"] = true
 		E.db["sle"]["pvp"]["autorelease"] = true
