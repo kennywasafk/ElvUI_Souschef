@@ -50,7 +50,7 @@ local function SetupLayout(layout)
 		E.private["sle"]["skins"]["merchant"]["style"] = "List"
 		E.private["sle"]["install_complete"] = "3.34"
 	end
-	
+
 	--[[----------------------------------
 	--	GlobalDB - General
 	--]]----------------------------------
@@ -69,12 +69,12 @@ local function SetupLayout(layout)
 		E.global["sle"]["advanced"]["general"] = true
 		E.global["sle"]["advanced"]["confirmed"] = true
 	end
-	
+
 	--The next section is for all the layout stuff
 	--[[----------------------------------
 	--	Set Up the Layout
 	--]]--
-	
+
 	--Misc
 	E.db["currentTutorial"] = 3
 	E.db["hideTutorial"] = true
@@ -199,7 +199,7 @@ local function SetupLayout(layout)
 	E.db["movers"]["PlayerPowerBarMover"] = "BOTTOM,ElvUIParent,BOTTOM,0,393"
 	E.db["movers"]["ElvAB_1"] = "BOTTOM,ElvUIParent,BOTTOM,0,46"
 	E.db["movers"]["ElvAB_2"] = "BOTTOM,ElvUIParent,BOTTOM,0,24"
-	E.db["movers"]["ElvAB_3"] = "BOTTOM,ElvUIParent,BOTTOM,0,2"	
+	E.db["movers"]["ElvAB_3"] = "BOTTOM,ElvUIParent,BOTTOM,0,2"
 	E.db["movers"]["ElvAB_4"] = "BOTTOM,ElvUIParent,BOTTOM,0,331"
 	E.db["movers"]["ElvAB_5"] = "BOTTOM,ElvUIParent,BOTTOM,228,2"
 	E.db["movers"]["ElvAB_6"] = "TOPLEFT,ElvUIParent,TOPLEFT,2,-140"
@@ -297,7 +297,7 @@ local function SetupLayout(layout)
 	E.db["actionbar"]["bar4"]["buttonspacing"] = 1
 	E.db["actionbar"]["bar4"]["buttonsPerRow"] = 5
 	E.db["actionbar"]["bar4"]["enabled"] = true
-	E.db["actionbar"]["bar5"]["buttons"] = 10
+	E.db["actionbar"]["bar5"]["buttons"] = 12
 	E.db["actionbar"]["bar5"]["buttonsize"] = 30
 	E.db["actionbar"]["bar5"]["buttonspacing"] = 1
 	E.db["actionbar"]["bar5"]["buttonsPerRow"] = 5
@@ -483,7 +483,7 @@ local function SetupLayout(layout)
 	E.db["unitframe"]["units"]["pet"]["name"]["xOffset"] = 2
 	E.db["unitframe"]["units"]["pet"]["name"]["yOffset"] = 2
 	E.db["unitframe"]["units"]["pet"]["power"]["enable"] = false
-	E.db["unitframe"]["units"]["pet"]["width"] = 115
+	E.db["unitframe"]["units"]["pet"]["width"] = 114
 	E.db["unitframe"]["units"]["player"]["aurabar"]["enable"] = false
 	E.db["unitframe"]["units"]["player"]["buffs"]["enable"] = false
 	E.db["unitframe"]["units"]["player"]["buffs"]["attachTo"] = "FRAME"
@@ -772,7 +772,7 @@ local function SetupLayout(layout)
 		E.db["sle"]["uibuttons"]["orientation"] = "horizontal"
 		E.db["sle"]["uibuttons"]["spacing"] = 2
 	end
-	
+
 	--CustomTweaks
 	if IsAddOnLoaded("ElvUI_CustomTweaks") then
 		E.db["CustomTweaks"]["AuraIconText"]["durationTextOffsetX"] = 1
@@ -780,25 +780,25 @@ local function SetupLayout(layout)
 		E.db["CustomTweaks"]["AuraIconText"]["durationTextPos"] = "CENTER"
 		E.db["CustomTweaks"]["AuraIconText"]["stackTextPos"] = "TOPRIGHT"
 	end
-	
+
 	--EverySecondCounts
 	if IsAddOnLoaded("ElvUI_EverySecondCounts") then
 		E.db["ESC"]["font"] = "Expressway"
 		E.db["ESC"]["textOffsetY"] = 0
 	end
-	
+
 	--GarrisonOrderHall
 	if IsAddOnLoaded("Broker_Garrison") then
 		E.db["datatexts"]["panels"]["TopLeftMiniPanel"] = "Broker_GarrisonOrderhall"
 		E.db["datatexts"]["panels"]["TopMiniPanel"] = "Broker_GarrisonOrderhall"
 	end
-	
+
 	--Altoholic
 	if IsAddOnLoaded("Altoholic") then
 		E.db["datatexts"]["panels"]["LeftChatDataPanel"]["right"] = "Altoholic"
 	end
-	
-	
+
+
 	if layout == "dps" or layout == "tank" then
 		--make some changes here
 		E.db["bags"]["itemLevelThreshold"] = 850
@@ -847,7 +847,7 @@ local function SetupLayout(layout)
 		E.db["unitframe"]["units"]["arena"]["spacing"] = 1
 		E.db["unitframe"]["units"]["arena"]["width"] = 150
 		E.db["unitframe"]["units"]["boss"]["debuffs"]["enable"] = false
-		E.db["unitframe"]["units"]["boss"]["debuffs"]["xOffset"] = -1	
+		E.db["unitframe"]["units"]["boss"]["debuffs"]["xOffset"] = -1
 		E.db["unitframe"]["units"]["boss"]["height"] = 35
 		E.db["unitframe"]["units"]["boss"]["width"] = 150
 		E.db["unitframe"]["units"]["focus"]["castbar"]["enable"] = false
@@ -951,7 +951,7 @@ local function SetupLayout(layout)
 			E.db["unitframe"]["units"]["raid"]["customTexts"]["names"]["text_format"] = "[namecolor][name:short]"
 			E.db["unitframe"]["units"]["raid"]["customTexts"]["names"]["xOffset"] = 10
 			E.db["unitframe"]["units"]["raid"]["customTexts"]["names"]["yOffset"] = 1
-			
+
 		--Settings that require addons
 		--CustomTweaks
 		if IsAddOnLoaded("ElvUI_CustomTweaks") then
@@ -993,7 +993,7 @@ local function SetupLayout(layout)
 				E.db["sle"]["unitframes"]["unit"]["target"]["auras"]["buffs"]= {}
 				E.db["sle"]["unitframes"]["unit"]["target"]["auras"]["buffs"]["threshold"] = -1
 		end
-	
+
 	elseif layout == "healer" then
 		--make some changes here
 		E.db["bags"]["itemLevelThreshold"] = 900
@@ -1147,7 +1147,7 @@ local function SetupLayout(layout)
 			E.db["unitframe"]["units"]["raid"]["customTexts"]["names"]["text_format"] = "[namecolor][name:short]"
 			E.db["unitframe"]["units"]["raid"]["customTexts"]["names"]["xOffset"] = 4
 			E.db["unitframe"]["units"]["raid"]["customTexts"]["names"]["yOffset"] = 6
-		
+
 		--Settings that require addons
 		--CustomTweaks
 		if IsAddOnLoaded("ElvUI_CustomTweaks") then
@@ -1193,7 +1193,7 @@ local function SetupLayout(layout)
 		end
 
 	end
-	
+
 
 
 	--[[
@@ -1380,7 +1380,7 @@ local function Filters()
 	E.global.nameplate.filters["Aggro"]["triggers"]["reactionType"]["hated"] = false
 	E.global.nameplate.filters["Aggro"]["triggers"]["reactionType"]["neutral"] = false
 	E.global.nameplate.filters["Aggro"]["triggers"]["reactionType"]["exalted"] = false
-	
+
 	CreateStyleFilter("Boss")
 	E.global.nameplate.filters["Boss"]["actions"]["texture"]["enable"] = false
 	E.global.nameplate.filters["Boss"]["actions"]["texture"]["texture"] = "ElvUI Norm"
@@ -1513,7 +1513,7 @@ local function Filters()
 	E.global.nameplate.filters["Boss"]["triggers"]["casting"]["interruptible"] = false
 	E.global.nameplate.filters["Boss"]["triggers"]["powerUsePlayer"] = false
 	E.global.nameplate.filters["Boss"]["triggers"]["outOfCombatUnit"] = false
-	
+
 	CreateStyleFilter("CC")
 	E.global.nameplate.filters["CC"]["actions"]["usePortrait"] = false
 	E.global.nameplate.filters["CC"]["actions"]["frameLevel"] = 0
@@ -1660,7 +1660,7 @@ local function Filters()
 	E.global.nameplate.filters["CC"]["triggers"]["reactionType"]["hated"] = false
 	E.global.nameplate.filters["CC"]["triggers"]["reactionType"]["neutral"] = false
 	E.global.nameplate.filters["CC"]["triggers"]["reactionType"]["exalted"] = false
-	
+
 	CreateStyleFilter("Explosive Orb")
 	E.global.nameplate.filters["Explosive Orb"]["actions"]["usePortrait"] = false
 	E.global.nameplate.filters["Explosive Orb"]["actions"]["frameLevel"] = 0
@@ -1802,9 +1802,9 @@ local function Filters()
 	E.global.nameplate.filters["Explosive Orb"]["triggers"]["instanceDifficulty"]["raid"]["timewalking"] = false
 	E.global.nameplate.filters["Explosive Orb"]["triggers"]["instanceDifficulty"]["raid"]["legacy25heroic"] = false
 	E.global.nameplate.filters["Explosive Orb"]["triggers"]["outOfCombatUnit"] = false
-	
+
 	NP:ConfigureAll()
-	
+
 	--[[
 	--	Unitframe Aura Filters
 	--]]
@@ -1908,7 +1908,7 @@ local function Filters()
 		E.global["unitframe"]["aurafilters"]["AnnoyingShit"]["spells"]["Stinging Swarm"]["stackThreshold"] = 0
 		E.global["unitframe"]["aurafilters"]["AnnoyingShit"]["type"] = "Whitelist"
 	end
-	
+
 	CreateAuraFilter("AmazingShit")
 	if E.global.unitframe.aurafilters["AmazingShit"] then
 		E.global["unitframe"]["aurafilters"]["AmazingShit"]["type"] = "Whitelist"
@@ -2013,7 +2013,7 @@ local function Filters()
 		E.global["unitframe"]["aurafilters"]["AmazingShit"]["spells"]["Evasion"]["priority"] = 0
 		E.global["unitframe"]["aurafilters"]["AmazingShit"]["spells"]["Evasion"]["stackThreshold"] = 0
 	end
-	
+
 	CreateAuraFilter("Blacklist")
 	if E.global.unitframe.aurafilters["Blacklist"] then
 		if not E.global["unitframe"]["aurafilters"]["Blacklist"]["spells"]["Sign of the Skirmisher"] then E.global["unitframe"]["aurafilters"]["Blacklist"]["spells"]["Sign of the Skirmisher"] = {} end
@@ -2023,7 +2023,7 @@ local function Filters()
 		E.global["unitframe"]["aurafilters"]["Blacklist"]["spells"]["Guild Champion"]["enable"] = true
 		E.global["unitframe"]["aurafilters"]["Blacklist"]["spells"]["Guild Champion"]["priority"] = 0
 	end
-	
+
 	CreateAuraFilter("RaidDebuffs")
 	if E.global.unitframe.aurafilters["RaidDebuffs"] then
 		if not E.global["unitframe"]["aurafilters"]["RaidDebuffs"]["spells"][235117] then E.global["unitframe"]["aurafilters"]["RaidDebuffs"]["spells"][235117] = {} end
@@ -2039,7 +2039,7 @@ local function Filters()
 		if not E.global["unitframe"]["aurafilters"]["RaidDebuffs"]["spells"][238429] then E.global["unitframe"]["aurafilters"]["RaidDebuffs"]["spells"][238429] = {} end
 		E.global["unitframe"]["aurafilters"]["RaidDebuffs"]["spells"][238429]["priority"] = 1
 	end
-	
+
 	CreateAuraFilter("CCDebuffs")
 	if E.global.unitframe.aurafilters["CCDebuffs"] then
 		if not E.global["unitframe"]["aurafilters"]["CCDebuffs"]["spells"][96294] then E.global["unitframe"]["aurafilters"]["CCDebuffs"]["spells"][96294] = {} end
@@ -2076,7 +2076,7 @@ local function Filters()
 		E.global["unitframe"]["aurafilters"]["CCDebuffs"]["spells"][135373]["enable"] = true
 		E.global["unitframe"]["aurafilters"]["CCDebuffs"]["spells"][135373]["priority"] = 0
 	end
-	
+
 	--[[
 	--	Buff watch Filters
 	--]]
@@ -2100,7 +2100,7 @@ local function Filters()
 		E.global["unitframe"]["buffwatch"]["PALADIN"][223306]["color"]["b"] = 0
 		E.global["unitframe"]["buffwatch"]["PALADIN"][223306]["anyUnit"] = false
 		E.global["unitframe"]["buffwatch"]["PALADIN"][223306]["point"] = "TOPLEFT"
-		
+
 	if not E.global["unitframe"]["buffwatch"]["DRUID"] then E.global["unitframe"]["buffwatch"]["DRUID"] = {} end
 		if not E.global["unitframe"]["buffwatch"]["DRUID"][102342] then E.global["unitframe"]["buffwatch"]["DRUID"][102342] = {} end
 		E.global["unitframe"]["buffwatch"]["DRUID"][102342]["enabled"] = true
@@ -2129,7 +2129,7 @@ local function Filters()
 		if not E.global["unitframe"]["buffwatch"]["DRUID"][8936] then E.global["unitframe"]["buffwatch"]["DRUID"][8936] = {} end
 		E.global["unitframe"]["buffwatch"]["DRUID"][8936]["xOffset"] = -11
 		E.global["unitframe"]["buffwatch"]["DRUID"][8936]["point"] = "TOPRIGHT"
-	
+
 	--[[
 	--	This section at the bottom is just to update ElvUI and display a message
 	--]]
@@ -2162,7 +2162,7 @@ local function SetupAddon(addon)
 	elseif addon == 'Gnosis' then
 		mod:LoadGnosisProfile(selectedLayout)
 	end
-	
+
 	--[[
 	--	This section at the bottom is just to update ElvUI and display a message
 	--]]
@@ -2319,7 +2319,7 @@ function mod:Initialize()
 	if E.private.install_complete and E.db[modName].install_version == nil then
 		E:GetModule("PluginInstaller"):Queue(InstallerData)
 	end
-	
+
 	--Insert our options table when ElvUI config is loaded
 	EP:RegisterPlugin(addon, InsertOptions)
 end
