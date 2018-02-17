@@ -300,7 +300,7 @@ local function SetupLayout(layout)
 	E.db["actionbar"]["bar5"]["buttons"] = 12
 	E.db["actionbar"]["bar5"]["buttonsize"] = 30
 	E.db["actionbar"]["bar5"]["buttonspacing"] = 1
-	E.db["actionbar"]["bar5"]["buttonsPerRow"] = 5
+	E.db["actionbar"]["bar5"]["buttonsPerRow"] = 6
 	E.db["actionbar"]["bar5"]["mouseover"] = true
 	E.db["actionbar"]["bar6"]["buttons"] = 12
 	E.db["actionbar"]["bar6"]["buttonsize"] = 25
@@ -827,7 +827,7 @@ local function SetupLayout(layout)
 		E.db["movers"]["UIErrorsFrameMover"] = "TOP,ElvUIParent,TOP,6,-432"
 		E.db["movers"]["TooltipMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,0,205"
 		E.db["movers"]["BossHeaderMover"] = "BOTTOM,ElvUIParent,BOTTOM,212,368"
-		E.db["movers"]["ElvUF_PetMover"] = "BOTTOM,ElvUIParent,BOTTOM,-135,367"
+		E.db["movers"]["ElvUF_PetMover"] = "BOTTOM,ElvUIParent,BOTTOM,-136,367"
 		E.db["movers"]["ElvUF_PartyMover"] = "TOPLEFT,ElvUIParent,BOTTOMLEFT,3,430"
 		E.db["movers"]["AlertFrameMover"] = "BOTTOM,ElvUIParent,BOTTOM,0,198"
 		E.db["movers"]["DebuffsMover"] = "BOTTOM,ElvUIParent,BOTTOM,166,237"
