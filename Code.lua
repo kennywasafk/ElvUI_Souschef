@@ -10,6 +10,21 @@ local StopMusic = StopMusic
 local match = string.match
 local gsub = string.gsub
 
+local FCF_ResetChatWindows = FCF_ResetChatWindows
+local FCF_SetLocked = FCF_SetLocked
+local FCF_DockFrame = FCF_DockFrame
+local FCF_OpenNewWindow = FCF_OpenNewWindow
+local FCF_GetChatWindowInfo = FCF_GetChatWindowInfo
+local FCF_SavePositionAndDimensions = FCF_SavePositionAndDimensions
+local FCF_StopDragging = FCF_StopDragging
+local FCF_SetChatWindowFontSize = FCF_SetChatWindowFontSize
+local FCF_SetWindowName = FCF_SetWindowName
+local ChatFrame_RemoveMessageGroup = ChatFrame_RemoveMessageGroup
+local ChatFrame_RemoveAllMessageGroups = ChatFrame_RemoveAllMessageGroups
+local ChatFrame_AddMessageGroup = ChatFrame_AddMessageGroup
+local ToggleChatColorNamesByClassGroup = ToggleChatColorNamesByClassGroup
+
+
 -- These are things we do not cache
 -- GLOBALS: PluginInstallStepComplete, PluginInstallFrame
 
@@ -30,6 +45,100 @@ local mod = E:GetModule(modName);
 local NP = E:GetModule("NamePlates")
 
 local selectedLayout = "Healer"
+
+local function SetupChat()
+	FCF_ResetChatWindows()
+	FCF_SetLocked(ChatFrame1, 1)
+	FCF_DockFrame(ChatFrame2)
+	FCF_SetLocked(ChatFrame2, 1)
+	FCF_OpenNewWindow(LOOT)
+	FCF_DockFrame(ChatFrame3)
+	FCF_SetLocked(ChatFrame3, 1)
+
+	for i = 1, NUM_CHAT_WINDOWS do
+		local frame = _G[format("ChatFrame%s", i)]
+		local chatFrameId = frame:GetID()
+		local chatName = FCF_GetChatWindowInfo(chatFrameId)
+
+		-- move general bottom left
+		if i == 1 then
+			frame:ClearAllPoints()
+			frame:Point("BOTTOMLEFT", LeftChatToggleButton, "TOPLEFT", 1, 3)
+		end
+
+		FCF_SavePositionAndDimensions(frame)
+		FCF_StopDragging(frame)
+
+		-- set default Elvui font size
+		FCF_SetChatWindowFontSize(nil, frame, 13)
+
+		-- rename chat windows
+		if i == 1 then
+			FCF_SetWindowName(frame, "All")
+		elseif i == 2 then
+			FCF_SetWindowName(frame, GUILD_EVENT_LOG)
+		end
+	end
+
+	-- Set up the "All" chat frame to filter out stuff shown in the Loot chat frame
+	ChatFrame_RemoveMessageGroup(ChatFrame1, "COMBAT_XP_GAIN")
+	ChatFrame_RemoveMessageGroup(ChatFrame1, "COMBAT_HONOR_GAIN")
+	ChatFrame_RemoveMessageGroup(ChatFrame1, "COMBAT_FACTION_CHANGE")
+	ChatFrame_RemoveMessageGroup(ChatFrame1, "LOOT")
+	ChatFrame_RemoveMessageGroup(ChatFrame1, "MONEY")
+
+	-- Set up the Loot chat frame
+	ChatFrame_RemoveAllMessageGroups(ChatFrame3)
+	ChatFrame_AddMessageGroup(ChatFrame3, "COMBAT_XP_GAIN")
+	ChatFrame_AddMessageGroup(ChatFrame3, "COMBAT_HONOR_GAIN")
+	ChatFrame_AddMessageGroup(ChatFrame3, "COMBAT_FACTION_CHANGE")
+	ChatFrame_AddMessageGroup(ChatFrame3, "LOOT")
+	ChatFrame_AddMessageGroup(ChatFrame3, "MONEY")
+
+	-- Enable classcolor automatically on login and on each character without doing /configure each time.
+	ToggleChatColorNamesByClassGroup(true, "SAY")
+	ToggleChatColorNamesByClassGroup(true, "EMOTE")
+	ToggleChatColorNamesByClassGroup(true, "YELL")
+	ToggleChatColorNamesByClassGroup(true, "GUILD")
+	ToggleChatColorNamesByClassGroup(true, "OFFICER")
+	ToggleChatColorNamesByClassGroup(true, "GUILD_ACHIEVEMENT")
+	ToggleChatColorNamesByClassGroup(true, "ACHIEVEMENT")
+	ToggleChatColorNamesByClassGroup(true, "WHISPER")
+	ToggleChatColorNamesByClassGroup(true, "PARTY")
+	ToggleChatColorNamesByClassGroup(true, "PARTY_LEADER")
+	ToggleChatColorNamesByClassGroup(true, "RAID")
+	ToggleChatColorNamesByClassGroup(true, "RAID_LEADER")
+	ToggleChatColorNamesByClassGroup(true, "RAID_WARNING")
+	ToggleChatColorNamesByClassGroup(true, "BATTLEGROUND")
+	ToggleChatColorNamesByClassGroup(true, "BATTLEGROUND_LEADER")
+	ToggleChatColorNamesByClassGroup(true, "INSTANCE_CHAT")
+	ToggleChatColorNamesByClassGroup(true, "INSTANCE_CHAT_LEADER")
+	ToggleChatColorNamesByClassGroup(true, "CHANNEL1")
+	ToggleChatColorNamesByClassGroup(true, "CHANNEL2")
+	ToggleChatColorNamesByClassGroup(true, "CHANNEL3")
+	ToggleChatColorNamesByClassGroup(true, "CHANNEL4")
+	ToggleChatColorNamesByClassGroup(true, "CHANNEL5")
+	ToggleChatColorNamesByClassGroup(true, "CHANNEL6")
+	ToggleChatColorNamesByClassGroup(true, "CHANNEL7")
+	ToggleChatColorNamesByClassGroup(true, "CHANNEL8")
+	ToggleChatColorNamesByClassGroup(true, "CHANNEL9")
+	ToggleChatColorNamesByClassGroup(true, "CHANNEL10")
+	ToggleChatColorNamesByClassGroup(true, "CHANNEL11")
+
+	if E.Chat then
+		E.Chat:PositionChat(true)
+		if E.db['RightChatPanelFaded'] then
+			RightChatToggleButton:Click()
+		end
+
+		if E.db['LeftChatPanelFaded'] then
+			LeftChatToggleButton:Click()
+		end
+	end
+
+	PluginInstallStepComplete.message = L["Chat Set"]
+	PluginInstallStepComplete:Show()
+end
 
 --This function will hold your layout settings
 local function SetupLayout(layout)
@@ -2234,6 +2343,15 @@ local InstallerData = {
 			PluginInstallFrame.Option4:SetText('Gnosis')
 		end,
 		[5] = function()
+			PluginInstallFrame.SubTitle:SetText(L["Chat"])
+			PluginInstallFrame.Desc1:SetText(format(L["This step changes your chat windows and positions them all in the left chat panel. These changes are tailored to the needs of the author of %s and are not necessary for this edit to function."], modName))
+			PluginInstallFrame.Desc2:SetText(L["Please click the button below to setup your chat windows."])
+			PluginInstallFrame.Desc3:SetText(L["Importance: |cffFF0000Low|r"])
+			PluginInstallFrame.Option1:Show()
+			PluginInstallFrame.Option1:SetScript("OnClick", SetupChat)
+			PluginInstallFrame.Option1:SetText(L["Setup Chat"])
+		end,
+		[6] = function()
 			PluginInstallFrame.SubTitle:SetText("Installation Complete!")
 			PluginInstallFrame.Desc1:SetText("You have now completed the installation process.")
 			PluginInstallFrame.Desc2:SetText("Click the button below in order to finalize everything and automatically reload your UI.")
@@ -2248,6 +2366,7 @@ local InstallerData = {
 		[2] = "• Layouts",
 		[3] = "• Filters",
 		[4] = "• Addons",
+		[4] = "• Chat",
 		[5] = "• Installation Complete",
 	},
 	StepTitlesColor = {186/255, 186/255, 186/255},
