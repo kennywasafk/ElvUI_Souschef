@@ -298,11 +298,13 @@ local function SetupLayout(layout)
 	E.db["actionbar"]["bar4"]["buttonsPerRow"] = 5
 	E.db["actionbar"]["bar4"]["enabled"] = true
 	E.db["actionbar"]["bar5"]["buttons"] = 12
-	E.db["actionbar"]["bar5"]["buttonsize"] = 30
+	E.db["actionbar"]["bar5"]["buttonsize"] = 29
 	E.db["actionbar"]["bar5"]["buttonspacing"] = 1
 	E.db["actionbar"]["bar5"]["buttonsPerRow"] = 6
 	E.db["actionbar"]["bar5"]["mouseover"] = true
-	E.db["actionbar"]["bar6"]["buttons"] = 12
+	E.db["actionbar"]["bar5"]["alpha"] = 0.5
+	E.db["actionbar"]["bar5"]["backdrop"] = true
+	E.db["actionbar"]["bar6"]["buttons"] = 10
 	E.db["actionbar"]["bar6"]["buttonsize"] = 25
 	E.db["actionbar"]["bar6"]["buttonspacing"] = 1
 	E.db["actionbar"]["bar6"]["buttonsPerRow"] = 5
