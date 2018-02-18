@@ -911,7 +911,7 @@ local function SetupLayout(layout)
 		E.db["datatexts"]["panels"]["LeftChatDataPanel"]["right"] = "Altoholic"
 	end
 
-
+	--Layout: DPS
 	if layout == "dps" or layout == "tank" then
 		--make some changes here
 		E.db["bags"]["itemLevelThreshold"] = 850
@@ -938,7 +938,7 @@ local function SetupLayout(layout)
 		E.db["movers"]["ElvUF_PlayerCastbarMover"] = "BOTTOM,ElvUIParent,BOTTOM,-11,402"
 		E.db["movers"]["TalkingHeadFrameMover"] = "BOTTOMLEFT,ElvUIParent,BOTTOMLEFT,3,171"
 		E.db["movers"]["UIErrorsFrameMover"] = "TOP,ElvUIParent,TOP,6,-432"
-		E.db["movers"]["TooltipMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,0,205"
+		E.db["movers"]["TooltipMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-1,91"
 		E.db["movers"]["BossHeaderMover"] = "BOTTOM,ElvUIParent,BOTTOM,212,368"
 		E.db["movers"]["ElvUF_PetMover"] = "BOTTOM,ElvUIParent,BOTTOM,-136,367"
 		E.db["movers"]["ElvUF_PartyMover"] = "TOPLEFT,ElvUIParent,BOTTOMLEFT,3,430"
@@ -1107,6 +1107,7 @@ local function SetupLayout(layout)
 				E.db["sle"]["unitframes"]["unit"]["target"]["auras"]["buffs"]["threshold"] = -1
 		end
 
+	--Layout: Healer
 	elseif layout == "healer" then
 		--make some changes here
 		E.db["bags"]["itemLevelThreshold"] = 900
@@ -1136,7 +1137,7 @@ local function SetupLayout(layout)
 		E.db["movers"]["ElvUF_PlayerCastbarMover"] = "BOTTOM,ElvUIParent,BOTTOM,-10,400"
 		E.db["movers"]["TalkingHeadFrameMover"] = "BOTTOMLEFT,ElvUIParent,BOTTOMLEFT,0,170"
 		E.db["movers"]["UIErrorsFrameMover"] = "TOP,ElvUIParent,TOP,-3,-348"
-		E.db["movers"]["TooltipMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-1,76"
+		E.db["movers"]["TooltipMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-1,91"
 		E.db["movers"]["BossHeaderMover"] = "TOP,ElvUIParent,TOP,-289,-96"
 		E.db["movers"]["ElvUF_PetMover"] = "BOTTOM,ElvUIParent,BOTTOM,-318,118"
 		E.db["movers"]["ElvUF_PartyMover"] = "TOPLEFT,ElvUIParent,BOTTOMLEFT,1140,613"
