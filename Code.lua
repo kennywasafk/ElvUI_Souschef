@@ -385,6 +385,7 @@ local function SetupLayout(layout)
 	E.db["datatexts"]["time24"] = true
 	--ActionBars
 	E.db["actionbar"]["backdropSpacingConverted"] = true
+	E.db["actionbar"]["desaturateOnCooldown"] = true
 	E.db["actionbar"]["bar1"]["backdropSpacing"] = 0
 	E.db["actionbar"]["bar1"]["buttonsize"] = 21
 	E.db["actionbar"]["bar1"]["buttonspacing"] = 1
@@ -412,7 +413,7 @@ local function SetupLayout(layout)
 	E.db["actionbar"]["bar5"]["buttonspacing"] = 1
 	E.db["actionbar"]["bar5"]["buttonsPerRow"] = 6
 	E.db["actionbar"]["bar5"]["mouseover"] = true
-	E.db["actionbar"]["bar5"]["alpha"] = 0.5
+	E.db["actionbar"]["bar5"]["alpha"] = 0.85
 	E.db["actionbar"]["bar5"]["backdrop"] = true
 	E.db["actionbar"]["bar6"]["buttons"] = 10
 	E.db["actionbar"]["bar6"]["buttonsize"] = 25
@@ -1123,7 +1124,6 @@ local function SetupLayout(layout)
 		E.db["movers"]["ArenaHeaderMover"] = "BOTTOM,ElvUIParent,BOTTOM,-304,269"
 		E.db["movers"]["ElvUIBagMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-200,2"
 		E.db["movers"]["RightChatMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,0,0"
-		E.db["movers"]["PetAB"] = "BOTTOM,ElvUIParent,BOTTOM,-292,38"
 		E.db["movers"]["ElvUF_RaidMover"] = "TOPLEFT,ElvUIParent,BOTTOMLEFT,1141,612"
 		E.db["movers"]["GMMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-202,3"
 		E.db["movers"]["MirrorTimer3Mover"] = "BOTTOM,ElvUIParent,BOTTOM,-3,182"
@@ -1139,10 +1139,12 @@ local function SetupLayout(layout)
 		E.db["movers"]["UIErrorsFrameMover"] = "TOP,ElvUIParent,TOP,-3,-348"
 		E.db["movers"]["TooltipMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-1,91"
 		E.db["movers"]["BossHeaderMover"] = "TOP,ElvUIParent,TOP,-289,-96"
-		E.db["movers"]["ElvUF_PetMover"] = "BOTTOM,ElvUIParent,BOTTOM,-318,118"
 		E.db["movers"]["ElvUF_PartyMover"] = "TOPLEFT,ElvUIParent,BOTTOMLEFT,1140,613"
 		E.db["movers"]["AlertFrameMover"] = "BOTTOM,ElvUIParent,BOTTOM,1,250"
 		E.db["movers"]["DebuffsMover"] = "BOTTOM,ElvUIParent,BOTTOM,166,279"
+		E.db["movers"]["PetAB"] = "BOTTOM,ElvUIParent,BOTTOM,-136,320"
+    E.db["movers"]["ElvUF_PetMover"] = "BOTTOM,ElvUIParent,BOTTOM,-136,367"
+    E.db["movers"]["ElvUF_PetCastbarMover"] = "BOTTOM,ElvUIParent,BOTTOM,-135,393"
 		--Auras
 		E.db["auras"]["debuffs"]["verticalSpacing"] = 20
 		--Nameplates
@@ -1179,7 +1181,7 @@ local function SetupLayout(layout)
 		E.db["unitframe"]["units"]["party"]["debuffs"]["perrow"] = 2
 		E.db["unitframe"]["units"]["party"]["GPSArrow"] = {}
 		E.db["unitframe"]["units"]["party"]["roleIcon"]["combatHide"] = true
-		E.db["unitframe"]["units"]["pet"]["enable"] = false
+		E.db["unitframe"]["units"]["pet"]["enable"] = true
 		E.db["unitframe"]["units"]["player"]["castbar"]["height"] = 23
 		E.db["unitframe"]["units"]["player"]["castbar"]["width"] = 175
 		E.db["unitframe"]["units"]["player"]["classbar"]["additionalPowerText"] = false
