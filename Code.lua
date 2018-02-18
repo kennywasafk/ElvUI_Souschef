@@ -342,6 +342,7 @@ local function SetupLayout(layout)
 	E.db["auras"]["buffs"]["maxWraps"] = 2
 	E.db["auras"]["buffs"]["verticalSpacing"] = 15
 	E.db["auras"]["buffs"]["size"] = 26
+	E.db["auras"]["buffs"]["wrapAfter"] = 18
 	E.db["auras"]["countXOffset"] = -18
 	E.db["auras"]["debuffs"]["horizontalSpacing"] = 3
 	E.db["auras"]["debuffs"]["wrapAfter"] = 6
@@ -900,6 +901,7 @@ local function SetupLayout(layout)
 	if IsAddOnLoaded("ElvUI_EverySecondCounts") then
 		E.db["ESC"]["font"] = "Expressway"
 		E.db["ESC"]["textOffsetY"] = 0
+		E.db["ESC"]["textOffsetX"] = 2
 	end
 
 	--GarrisonOrderHall
