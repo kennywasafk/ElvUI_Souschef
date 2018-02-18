@@ -264,7 +264,7 @@ local function SetupLayout(layout)
 	--Chat
 	E.db["chat"]["fontSize"] = 12
 	E.db["chat"]["emotionIcons"] = false
-	E.db["chat"]["keywordSound"] = "Whisper Alert"
+	E.db["chat"]["keywordSound"] = "None"
 	E.db["chat"]["tabFont"] = "Expressway"
 	E.db["chat"]["tabFontSize"] = 14
 	E.db["chat"]["editBoxPosition"] = "ABOVE_CHAT"
@@ -277,7 +277,7 @@ local function SetupLayout(layout)
 	E.db["chat"]["noAlertInCombat"] = true
 	E.db["chat"]["panelTabBackdrop"] = true
 	E.db["chat"]["timeStampFormat"] = "%H:%M "
-	E.db["chat"]["tabFontOutline"] = "OUTLINE"
+	E.db["chat"]["tabFontOutline"] = "NONE"
 	E.db["chat"]["tapFontSize"] = 12
 	E.db["chat"]["panelWidth"] = 411
 	--Movers
