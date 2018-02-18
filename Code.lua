@@ -382,7 +382,7 @@ local function SetupLayout(layout)
 	E.db["datatexts"]["panels"]["RightMiniPanel"] = "Gold"
 	E.db["datatexts"]["panelTransparency"] = true
 	E.db["datatexts"]["rightChatPanel"] = false
-	E.db["datatexts"]["time24"] = true
+	E.db["datatexts"]["time24"] = false
 	--ActionBars
 	E.db["actionbar"]["backdropSpacingConverted"] = true
 	E.db["actionbar"]["desaturateOnCooldown"] = true
@@ -756,7 +756,7 @@ local function SetupLayout(layout)
 		E.db["sle"]["Armory"]["Character"]["Stats"]["List"]["POWER"] = true
 		E.db["sle"]["Armory"]["Character"]["Stats"]["OnlyPrimary"] = false
 		E.db["sle"]["Armory"]["Inspect"]["Backdrop"]["SelectedBG"] = "HIDE"
-		E.db["sle"]["Armory"]["Inspect"]["Enable"] = true
+		E.db["sle"]["Armory"]["Inspect"]["Enable"] = false
 		E.db["sle"]["Armory"]["Inspect"]["Enchant"]["Display"] = "MouseoverOnly"
 		E.db["sle"]["Armory"]["Inspect"]["Enchant"]["Font"] = "HaxrCorp12cyr"
 		E.db["sle"]["Armory"]["Inspect"]["Enchant"]["FontSize"] = 15
@@ -850,6 +850,7 @@ local function SetupLayout(layout)
 		E.db["sle"]["minimap"]["instance"]["font"] = "HaxrCorp12cyr"
 		E.db["sle"]["minimap"]["instance"]["fontOutline"] = "MONOCHROMEOUTLINE"
 		E.db["sle"]["minimap"]["instance"]["fontSize"] = 17
+		E.db["sle"]["minimap"]["mapicons"]["enable"] = true
 		E.db["sle"]["minimap"]["mapicons"]["iconsize"] = 25
 		E.db["sle"]["minimap"]["mapicons"]["spacing"] = 1
 		E.db["sle"]["minimap"]["mapicons"]["iconperrow"] = 1
@@ -930,13 +931,13 @@ local function SetupLayout(layout)
 		E.db["movers"]["ElvUF_RaidMover"] = "TOPLEFT,ElvUIParent,BOTTOMLEFT,3,300"
 		E.db["movers"]["GMMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,0,130"
 		E.db["movers"]["ElvUF_FocusMover"] = "TOP,ElvUIParent,TOP,212,-386"
-		E.db["movers"]["ClassBarMover"] = "BOTTOM,ElvUIParent,BOTTOM,0,402"
+		E.db["movers"]["ClassBarMover"] = "BOTTOM,ElvUIParent,BOTTOM,0,401"
 		E.db["movers"]["MicrobarMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-2,112"
 		E.db["movers"]["ElvUF_TargetMover"] = "TOP,ElvUIParent,TOP,212,-472"
 		E.db["movers"]["BNETMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,0,130"
 		E.db["movers"]["ElvUF_Raid40Mover"] = "TOPLEFT,ElvUIParent,BOTTOMLEFT,3,430"
 		E.db["movers"]["ElvUF_TargetCastbarMover"] = "TOP,ElvUIParent,TOP,212,-508"
-		E.db["movers"]["ElvUF_PlayerCastbarMover"] = "BOTTOM,ElvUIParent,BOTTOM,-11,402"
+		E.db["movers"]["ElvUF_PlayerCastbarMover"] = "BOTTOM,ElvUIParent,BOTTOM,-11,401"
 		E.db["movers"]["TalkingHeadFrameMover"] = "BOTTOMLEFT,ElvUIParent,BOTTOMLEFT,3,171"
 		E.db["movers"]["UIErrorsFrameMover"] = "TOP,ElvUIParent,TOP,6,-432"
 		E.db["movers"]["TooltipMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-1,91"
@@ -978,8 +979,8 @@ local function SetupLayout(layout)
 		E.db["unitframe"]["units"]["pet"]["name"]["text_format"] = ""
 		E.db["unitframe"]["units"]["player"]["castbar"]["height"] = 22
 		E.db["unitframe"]["units"]["player"]["castbar"]["width"] = 176
-		E.db["unitframe"]["units"]["player"]["classbar"]["height"] = 8
-		E.db["unitframe"]["units"]["player"]["power"]["height"] = 8
+		E.db["unitframe"]["units"]["player"]["classbar"]["height"] = 7
+		E.db["unitframe"]["units"]["player"]["power"]["height"] = 7
 		E.db["unitframe"]["units"]["raid"]["debuffs"]["anchorPoint"] = "TOPRIGHT"
 		E.db["unitframe"]["units"]["raid"]["debuffs"]["perrow"] = 2
 		E.db["unitframe"]["units"]["raid"]["debuffs"]["sizeOverride"] = 16
@@ -1134,7 +1135,7 @@ local function SetupLayout(layout)
 		E.db["movers"]["BNETMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-200,4"
 		E.db["movers"]["ElvUF_Raid40Mover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMLEFT,1519,406"
 		E.db["movers"]["ElvUF_TargetCastbarMover"] = "BOTTOM,ElvUIParent,BOTTOM,168,347"
-		E.db["movers"]["ElvUF_PlayerCastbarMover"] = "BOTTOM,ElvUIParent,BOTTOM,-10,400"
+		E.db["movers"]["ElvUF_PlayerCastbarMover"] = "BOTTOM,ElvUIParent,BOTTOM,-11,400"
 		E.db["movers"]["TalkingHeadFrameMover"] = "BOTTOMLEFT,ElvUIParent,BOTTOMLEFT,0,170"
 		E.db["movers"]["UIErrorsFrameMover"] = "TOP,ElvUIParent,TOP,-3,-348"
 		E.db["movers"]["TooltipMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-1,91"
@@ -1183,7 +1184,7 @@ local function SetupLayout(layout)
 		E.db["unitframe"]["units"]["party"]["roleIcon"]["combatHide"] = true
 		E.db["unitframe"]["units"]["pet"]["enable"] = true
 		E.db["unitframe"]["units"]["player"]["castbar"]["height"] = 23
-		E.db["unitframe"]["units"]["player"]["castbar"]["width"] = 175
+		E.db["unitframe"]["units"]["player"]["castbar"]["width"] = 176
 		E.db["unitframe"]["units"]["player"]["classbar"]["additionalPowerText"] = false
 		E.db["unitframe"]["units"]["player"]["classbar"]["height"] = 6
 		E.db["unitframe"]["units"]["player"]["power"]["height"] = 6
