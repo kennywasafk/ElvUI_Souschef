@@ -159,6 +159,7 @@ local function SetupLayout(layout)
 		E.private["sle"]["skins"]["merchant"]["enable"] = true
 		E.private["sle"]["skins"]["merchant"]["style"] = "List"
 		E.private["sle"]["install_complete"] = "3.34"
+		E.private["sle"]["actionbars"]["transparentBackdrop"] = true
 	end
 
 	--[[----------------------------------
@@ -727,7 +728,6 @@ local function SetupLayout(layout)
 			E.db["sle"]["unitframes"]["unit"]["player"]["rested"] = {}
 			E.db["sle"]["unitframes"]["unit"]["player"]["rested"]["xoffset"] = -9
 			E.db["sle"]["unitframes"]["unit"]["player"]["rested"]["yoffset"] = -15
-		E.db["sle"]["actionbars"]["transparentBackdrop"] = true
 		E.db["sle"]["Armory"]["Character"]["Artifact"]["Font"] = "HaxrCorp12cyr"
 		E.db["sle"]["Armory"]["Character"]["Artifact"]["FontSize"] = 15
 		E.db["sle"]["Armory"]["Character"]["Artifact"]["FontStyle"] = "MONOCHROMEOUTLINE"
