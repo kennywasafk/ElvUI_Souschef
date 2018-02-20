@@ -246,6 +246,11 @@ local function SetupLayout(layout)
 	E.db["general"]["totems"]["growthDirection"] = "HORIZONTAL"
 	E.db["general"]["totems"]["size"] = 32
 	E.db["general"]["totems"]["spacing"] = 3
+	E.db["general"]["backdropcolor"] = {
+		["r"] = 0.125490196078431,
+		["g"] = 0.125490196078431,
+		["b"] = 0.125490196078431,
+	}
 	--Bags
 	E.db["bags"]["countFontSize"] = 15
 	E.db["bags"]["itemLevelFont"] = "HaxrCorp12cyr"
@@ -414,7 +419,7 @@ local function SetupLayout(layout)
 	E.db["actionbar"]["bar5"]["buttonspacing"] = 1
 	E.db["actionbar"]["bar5"]["buttonsPerRow"] = 6
 	E.db["actionbar"]["bar5"]["mouseover"] = true
-	E.db["actionbar"]["bar5"]["alpha"] = 0.85
+	E.db["actionbar"]["bar5"]["alpha"] = 1.00
 	E.db["actionbar"]["bar5"]["backdrop"] = true
 	E.db["actionbar"]["bar6"]["buttons"] = 10
 	E.db["actionbar"]["bar6"]["buttonsize"] = 25
@@ -722,6 +727,7 @@ local function SetupLayout(layout)
 			E.db["sle"]["unitframes"]["unit"]["player"]["rested"] = {}
 			E.db["sle"]["unitframes"]["unit"]["player"]["rested"]["xoffset"] = -9
 			E.db["sle"]["unitframes"]["unit"]["player"]["rested"]["yoffset"] = -15
+		E.db["sle"]["actionbars"]["transparentBackdrop"] = true
 		E.db["sle"]["Armory"]["Character"]["Artifact"]["Font"] = "HaxrCorp12cyr"
 		E.db["sle"]["Armory"]["Character"]["Artifact"]["FontSize"] = 15
 		E.db["sle"]["Armory"]["Character"]["Artifact"]["FontStyle"] = "MONOCHROMEOUTLINE"
