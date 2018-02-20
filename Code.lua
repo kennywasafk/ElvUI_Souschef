@@ -151,6 +151,10 @@ local function SetupLayout(layout)
 	--]]----------------------------------
 	E.private["bags"]["enable"] = true
 	E.private["theme"] = "default"
+	E.private["general"]["glossTex"] = "Flatt"
+	E.private["general"]["normTex"] = "Flatt"
+	E.private["general"]["namefont"] = "Expressway"
+	E.private["general"]["dmgfont"] = "Expressway"
 	if IsAddOnLoaded("ElvUI_SLE") then
 		E.private["sle"]["module"]["screensaver"] = true
 		E.private["sle"]["minimap"]["mapicons"]["enable"] = true
@@ -2302,7 +2306,7 @@ end
 --This is the data we pass on to the ElvUI Plugin Installer.
 --The Plugin Installer is reponsible for displaying the install guide for this layout.
 local InstallerData = {
-	Title = format("|cFFC79C6E%s's |cFFBABABAUI |cFFFFFFFF%s|r", modName, "Installation"),
+	Title = format("|cFFC79C6E%s's |cFFBABABAUI|r |cFFFFFFFF%s|r", modName, "Installation"),
 	Name = modName,
 	tutorialImage = "Interface\\AddOns\\ElvUI_Souschef\\logo_sui.tga",
 	--tutorialImage = "Interface\\AddOns\\MyAddOn\\logo.tga", --If you have a logo you want to use, otherwise it uses the one from ElvUI
@@ -2333,7 +2337,7 @@ local InstallerData = {
 		[3] = function()
 			PluginInstallFrame.SubTitle:SetText("Aura and Name Plate Filters")
 			PluginInstallFrame.Desc1:SetText("This step will apply my custom Aura and Name Plate Filters")
-			PluginInstallFrame.Desc2:SetText("|cFFEE4545Please note that this will replace any filters you already have in place. If you wish to keep your own filters, please skip this step.")
+			PluginInstallFrame.Desc2:SetText("|cFFEE4545Please note that this will replace any filters you already have in place. \n If you'd like to keep your own filters, please skip this step.")
 			PluginInstallFrame.Desc3:SetText("Importance: |cff07D400Low|r")
 			PluginInstallFrame.Option1:Show()
 			PluginInstallFrame.Option1:SetScript("OnClick", function() Filters() end)
@@ -2359,7 +2363,7 @@ local InstallerData = {
 		[5] = function()
 			PluginInstallFrame.SubTitle:SetText(L["Chat"])
 			PluginInstallFrame.Desc1:SetText(format(L["This step changes your chat windows and positions them all in the left chat panel. These changes are tailored to the needs of the author of %s and are not necessary for this edit to function."], modName))
-			PluginInstallFrame.Desc2:SetText(L["Please click the button below to setup your chat windows."])
+			PluginInstallFrame.Desc2:SetText(L["|cFFEE4545Please note that using this will overwrite the existing Chat Tab settings."])
 			PluginInstallFrame.Desc3:SetText(L["Importance: |cffFF0000Low|r"])
 			PluginInstallFrame.Option1:Show()
 			PluginInstallFrame.Option1:SetScript("OnClick", SetupChat)
