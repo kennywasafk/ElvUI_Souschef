@@ -165,6 +165,9 @@ local function SetupLayout(layout)
 		E.private["sle"]["install_complete"] = "3.34"
 		E.private["sle"]["actionbars"]["transparentBackdrop"] = true
 	end
+	if IsAddOnLoaded("ElvUI_CustomTweaks") then
+		E.private["CustomTweaks"]["CastbarCustomBackdrop"] = true
+	end
 
 	--[[----------------------------------
 	--	GlobalDB - General
@@ -493,9 +496,9 @@ local function SetupLayout(layout)
 	E.db["unitframe"]["colors"]["auraBarDebuff"]["b"] = 0.13725490196078
 	E.db["unitframe"]["colors"]["auraBarDebuff"]["g"] = 0.062745098039216
 	E.db["unitframe"]["colors"]["auraBarDebuff"]["r"] = 0.28627450980392
-	E.db["unitframe"]["colors"]["castColor"]["b"] = 0.28235294117647
-	E.db["unitframe"]["colors"]["castColor"]["g"] = 0.77254901960784
-	E.db["unitframe"]["colors"]["castColor"]["r"] = 0.91372549019608
+	E.db["unitframe"]["colors"]["castColor"]["b"] = 0.125490196078431
+	E.db["unitframe"]["colors"]["castColor"]["g"] = 0.125490196078431
+	E.db["unitframe"]["colors"]["castColor"]["r"] = 0.125490196078431
 	E.db["unitframe"]["colors"]["colorhealthbyvalue"] = false
 	E.db["unitframe"]["colors"]["customhealthbackdrop"] = true
 	E.db["unitframe"]["colors"]["healPrediction"]["others"]["b"] = 1
@@ -719,6 +722,7 @@ local function SetupLayout(layout)
 	E.db["unitframe"]["units"]["targettarget"]["power"]["height"] = 5
 	E.db["unitframe"]["units"]["targettarget"]["power"]["width"] = "spaced"
 	E.db["unitframe"]["units"]["targettarget"]["width"] = 125
+	E.db["unitframe"]["units"]["player"]["classbar"]["additionalPowerText"] = false
 
 	--[[
 	Settings that rely on specific addons being present
@@ -779,6 +783,7 @@ local function SetupLayout(layout)
 		E.db["sle"]["Armory"]["Inspect"]["Level"]["FontStyle"] = "MONOCHROMEOUTLINE"
 		E.db["sle"]["Armory"]["Inspect"]["NoticeMissing"] = false
 		E.db["sle"]["bags"]["artifactPower"]["enable"] = true
+		E.db["sle"]["bags"]["artifactPower"]["short"] = true
 		E.db["sle"]["bags"]["artifactPower"]["fonts"]["font"] = "HaxrCorp12cyr"
 		E.db["sle"]["bags"]["artifactPower"]["fonts"]["outline"] = "MONOCHROMEOUTLINE"
 		E.db["sle"]["bags"]["artifactPower"]["fonts"]["size"] = 15
@@ -905,6 +910,11 @@ local function SetupLayout(layout)
 		E.db["CustomTweaks"]["AuraIconText"]["durationTextOffsetY"] = 0
 		E.db["CustomTweaks"]["AuraIconText"]["durationTextPos"] = "CENTER"
 		E.db["CustomTweaks"]["AuraIconText"]["stackTextPos"] = "TOPRIGHT"
+		E.db["CustomTweaks"]["CastbarCustomBackdrop"]["backdropColor"] = {
+				["b"] = 0.42352941176471,
+				["g"] = 0.42352941176471,
+				["r"] = 0.42352941176471,
+			}
 	end
 
 	--EverySecondCounts
