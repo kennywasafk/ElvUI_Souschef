@@ -151,6 +151,10 @@ local function SetupLayout(layout)
 	--]]----------------------------------
 	E.private["bags"]["enable"] = true
 	E.private["theme"] = "default"
+	E.private["general"]["glossTex"] = "Flatt"
+	E.private["general"]["normTex"] = "Flatt"
+	E.private["general"]["namefont"] = "Expressway"
+	E.private["general"]["dmgfont"] = "Expressway"
 	if IsAddOnLoaded("ElvUI_SLE") then
 		E.private["sle"]["module"]["screensaver"] = true
 		E.private["sle"]["minimap"]["mapicons"]["enable"] = true
@@ -159,6 +163,10 @@ local function SetupLayout(layout)
 		E.private["sle"]["skins"]["merchant"]["enable"] = true
 		E.private["sle"]["skins"]["merchant"]["style"] = "List"
 		E.private["sle"]["install_complete"] = "3.34"
+		E.private["sle"]["actionbars"]["transparentBackdrop"] = true
+	end
+	if IsAddOnLoaded("ElvUI_CustomTweaks") then
+		E.private["CustomTweaks"]["CastbarCustomBackdrop"] = true
 	end
 
 	--[[----------------------------------
@@ -246,6 +254,11 @@ local function SetupLayout(layout)
 	E.db["general"]["totems"]["growthDirection"] = "HORIZONTAL"
 	E.db["general"]["totems"]["size"] = 32
 	E.db["general"]["totems"]["spacing"] = 3
+	E.db["general"]["backdropcolor"] = {
+		["r"] = 0.125490196078431,
+		["g"] = 0.125490196078431,
+		["b"] = 0.125490196078431,
+	}
 	--Bags
 	E.db["bags"]["countFontSize"] = 15
 	E.db["bags"]["itemLevelFont"] = "HaxrCorp12cyr"
@@ -264,7 +277,7 @@ local function SetupLayout(layout)
 	--Chat
 	E.db["chat"]["fontSize"] = 12
 	E.db["chat"]["emotionIcons"] = false
-	E.db["chat"]["keywordSound"] = "Whisper Alert"
+	E.db["chat"]["keywordSound"] = "None"
 	E.db["chat"]["tabFont"] = "Expressway"
 	E.db["chat"]["tabFontSize"] = 14
 	E.db["chat"]["editBoxPosition"] = "ABOVE_CHAT"
@@ -277,7 +290,7 @@ local function SetupLayout(layout)
 	E.db["chat"]["noAlertInCombat"] = true
 	E.db["chat"]["panelTabBackdrop"] = true
 	E.db["chat"]["timeStampFormat"] = "%H:%M "
-	E.db["chat"]["tabFontOutline"] = "OUTLINE"
+	E.db["chat"]["tabFontOutline"] = "NONE"
 	E.db["chat"]["tapFontSize"] = 12
 	E.db["chat"]["panelWidth"] = 411
 	--Movers
@@ -286,7 +299,7 @@ local function SetupLayout(layout)
 	E.db["movers"]["LootFrameMover"] = "BOTTOM,ElvUIParent,BOTTOM,0,248"
 	E.db["movers"]["ElvUF_RaidpetMover"] = "TOPLEFT,ElvUIParent,BOTTOMLEFT,4,736"
 	E.db["movers"]["ElvUF_TargetTargetMover"] = "BOTTOM,ElvUIParent,BOTTOM,132,115"
-	E.db["movers"]["ReputationBarMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-204,39"
+	E.db["movers"]["ReputationBarMover"] = "TOPLEFT,ElvUIParent,TOPLEFT,1,-192"
 	E.db["movers"]["ObjectiveFrameMover"] = "TOPRIGHT,ElvUIParent,TOPRIGHT,-60,-88"
 	E.db["movers"]["ShiftAB"] = "TOPLEFT,ElvUIParent,BOTTOMLEFT,0,194"
 	E.db["movers"]["ElvUF_AssistMover"] = "TOPLEFT,ElvUIParent,BOTTOMLEFT,397,284"
@@ -304,7 +317,7 @@ local function SetupLayout(layout)
 	E.db["movers"]["SLE_DataPanel_4_Mover"] = "TOPRIGHT,ElvUIParent,TOPRIGHT,-12,-460"
 	E.db["movers"]["LevelUpBossBannerMover"] = "TOP,ElvUIParent,TOP,2,-286"
 	E.db["movers"]["SLE_DataPanel_8_Mover"] = "TOP,ElvUIParent,TOP,1,0"
-	E.db["movers"]["HonorBarMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-254,262"
+	E.db["movers"]["HonorBarMover"] = "TOPLEFT,ElvUIParent,TOPLEFT,1,-200"
 	E.db["movers"]["PvPMover"] = "TOP,ElvUIParent,TOP,1,-94"
 	E.db["movers"]["PlayerPowerBarMover"] = "BOTTOM,ElvUIParent,BOTTOM,0,393"
 	E.db["movers"]["ElvAB_1"] = "BOTTOM,ElvUIParent,BOTTOM,0,46"
@@ -342,6 +355,7 @@ local function SetupLayout(layout)
 	E.db["auras"]["buffs"]["maxWraps"] = 2
 	E.db["auras"]["buffs"]["verticalSpacing"] = 15
 	E.db["auras"]["buffs"]["size"] = 26
+	E.db["auras"]["buffs"]["wrapAfter"] = 18
 	E.db["auras"]["countXOffset"] = -18
 	E.db["auras"]["debuffs"]["horizontalSpacing"] = 3
 	E.db["auras"]["debuffs"]["wrapAfter"] = 6
@@ -352,22 +366,22 @@ local function SetupLayout(layout)
 	E.db["databars"]["artifact"]["hideInCombat"] = true
 	E.db["databars"]["artifact"]["orientation"] = "HORIZONTAL"
 	E.db["databars"]["artifact"]["textSize"] = 22
+	E.db["databars"]["artifact"]["width"] = 130
 	E.db["databars"]["experience"]["height"] = 7
 	E.db["databars"]["experience"]["orientation"] = "HORIZONTAL"
 	E.db["databars"]["experience"]["width"] = 263
 	E.db["databars"]["honor"]["enable"] = false
-	E.db["databars"]["honor"]["height"] = 10
+	E.db["databars"]["honor"]["height"] = 7
 	E.db["databars"]["honor"]["hideInCombat"] = true
 	E.db["databars"]["honor"]["mouseover"] = true
 	E.db["databars"]["honor"]["orientation"] = "HORIZONTAL"
 	E.db["databars"]["honor"]["reverseFill"] = true
-	E.db["databars"]["honor"]["width"] = 134
-	E.db["databars"]["reputation"]["height"] = 6
+	E.db["databars"]["honor"]["width"] = 130
+	E.db["databars"]["reputation"]["height"] = 7
 	E.db["databars"]["reputation"]["hideInCombat"] = true
 	E.db["databars"]["reputation"]["orientation"] = "HORIZONTAL"
-	E.db["databars"]["reputation"]["reverseFill"] = true
-	E.db["databars"]["reputation"]["width"] = 126
-	E.db["databars"]["artifact"]["width"] = 130
+	E.db["databars"]["reputation"]["reverseFill"] = false
+	E.db["databars"]["reputation"]["width"] = 130
 	--Datatexts
 	E.db["datatexts"]["currencies"]["displayedCurrency"] = "ANCIENT_MANA"
 	E.db["datatexts"]["font"] = "Expressway"
@@ -382,9 +396,10 @@ local function SetupLayout(layout)
 	E.db["datatexts"]["panels"]["RightMiniPanel"] = "Gold"
 	E.db["datatexts"]["panelTransparency"] = true
 	E.db["datatexts"]["rightChatPanel"] = false
-	E.db["datatexts"]["time24"] = true
+	E.db["datatexts"]["time24"] = false
 	--ActionBars
 	E.db["actionbar"]["backdropSpacingConverted"] = true
+	E.db["actionbar"]["desaturateOnCooldown"] = true
 	E.db["actionbar"]["bar1"]["backdropSpacing"] = 0
 	E.db["actionbar"]["bar1"]["buttonsize"] = 21
 	E.db["actionbar"]["bar1"]["buttonspacing"] = 1
@@ -412,7 +427,7 @@ local function SetupLayout(layout)
 	E.db["actionbar"]["bar5"]["buttonspacing"] = 1
 	E.db["actionbar"]["bar5"]["buttonsPerRow"] = 6
 	E.db["actionbar"]["bar5"]["mouseover"] = true
-	E.db["actionbar"]["bar5"]["alpha"] = 0.5
+	E.db["actionbar"]["bar5"]["alpha"] = 1.00
 	E.db["actionbar"]["bar5"]["backdrop"] = true
 	E.db["actionbar"]["bar6"]["buttons"] = 10
 	E.db["actionbar"]["bar6"]["buttonsize"] = 25
@@ -481,9 +496,9 @@ local function SetupLayout(layout)
 	E.db["unitframe"]["colors"]["auraBarDebuff"]["b"] = 0.13725490196078
 	E.db["unitframe"]["colors"]["auraBarDebuff"]["g"] = 0.062745098039216
 	E.db["unitframe"]["colors"]["auraBarDebuff"]["r"] = 0.28627450980392
-	E.db["unitframe"]["colors"]["castColor"]["b"] = 0.28235294117647
-	E.db["unitframe"]["colors"]["castColor"]["g"] = 0.77254901960784
-	E.db["unitframe"]["colors"]["castColor"]["r"] = 0.91372549019608
+	E.db["unitframe"]["colors"]["castColor"]["b"] = 0.125490196078431
+	E.db["unitframe"]["colors"]["castColor"]["g"] = 0.125490196078431
+	E.db["unitframe"]["colors"]["castColor"]["r"] = 0.125490196078431
 	E.db["unitframe"]["colors"]["colorhealthbyvalue"] = false
 	E.db["unitframe"]["colors"]["customhealthbackdrop"] = true
 	E.db["unitframe"]["colors"]["healPrediction"]["others"]["b"] = 1
@@ -707,6 +722,7 @@ local function SetupLayout(layout)
 	E.db["unitframe"]["units"]["targettarget"]["power"]["height"] = 5
 	E.db["unitframe"]["units"]["targettarget"]["power"]["width"] = "spaced"
 	E.db["unitframe"]["units"]["targettarget"]["width"] = 125
+	E.db["unitframe"]["units"]["player"]["classbar"]["additionalPowerText"] = false
 
 	--[[
 	Settings that rely on specific addons being present
@@ -755,7 +771,7 @@ local function SetupLayout(layout)
 		E.db["sle"]["Armory"]["Character"]["Stats"]["List"]["POWER"] = true
 		E.db["sle"]["Armory"]["Character"]["Stats"]["OnlyPrimary"] = false
 		E.db["sle"]["Armory"]["Inspect"]["Backdrop"]["SelectedBG"] = "HIDE"
-		E.db["sle"]["Armory"]["Inspect"]["Enable"] = true
+		E.db["sle"]["Armory"]["Inspect"]["Enable"] = false
 		E.db["sle"]["Armory"]["Inspect"]["Enchant"]["Display"] = "MouseoverOnly"
 		E.db["sle"]["Armory"]["Inspect"]["Enchant"]["Font"] = "HaxrCorp12cyr"
 		E.db["sle"]["Armory"]["Inspect"]["Enchant"]["FontSize"] = 15
@@ -767,6 +783,7 @@ local function SetupLayout(layout)
 		E.db["sle"]["Armory"]["Inspect"]["Level"]["FontStyle"] = "MONOCHROMEOUTLINE"
 		E.db["sle"]["Armory"]["Inspect"]["NoticeMissing"] = false
 		E.db["sle"]["bags"]["artifactPower"]["enable"] = true
+		E.db["sle"]["bags"]["artifactPower"]["short"] = true
 		E.db["sle"]["bags"]["artifactPower"]["fonts"]["font"] = "HaxrCorp12cyr"
 		E.db["sle"]["bags"]["artifactPower"]["fonts"]["outline"] = "MONOCHROMEOUTLINE"
 		E.db["sle"]["bags"]["artifactPower"]["fonts"]["size"] = 15
@@ -849,6 +866,7 @@ local function SetupLayout(layout)
 		E.db["sle"]["minimap"]["instance"]["font"] = "HaxrCorp12cyr"
 		E.db["sle"]["minimap"]["instance"]["fontOutline"] = "MONOCHROMEOUTLINE"
 		E.db["sle"]["minimap"]["instance"]["fontSize"] = 17
+		E.db["sle"]["minimap"]["mapicons"]["enable"] = true
 		E.db["sle"]["minimap"]["mapicons"]["iconsize"] = 25
 		E.db["sle"]["minimap"]["mapicons"]["spacing"] = 1
 		E.db["sle"]["minimap"]["mapicons"]["iconperrow"] = 1
@@ -892,12 +910,18 @@ local function SetupLayout(layout)
 		E.db["CustomTweaks"]["AuraIconText"]["durationTextOffsetY"] = 0
 		E.db["CustomTweaks"]["AuraIconText"]["durationTextPos"] = "CENTER"
 		E.db["CustomTweaks"]["AuraIconText"]["stackTextPos"] = "TOPRIGHT"
+		E.db["CustomTweaks"]["CastbarCustomBackdrop"]["backdropColor"] = {
+				["b"] = 0.42352941176471,
+				["g"] = 0.42352941176471,
+				["r"] = 0.42352941176471,
+			}
 	end
 
 	--EverySecondCounts
 	if IsAddOnLoaded("ElvUI_EverySecondCounts") then
 		E.db["ESC"]["font"] = "Expressway"
 		E.db["ESC"]["textOffsetY"] = 0
+		E.db["ESC"]["textOffsetX"] = 2
 	end
 
 	--GarrisonOrderHall
@@ -911,11 +935,20 @@ local function SetupLayout(layout)
 		E.db["datatexts"]["panels"]["LeftChatDataPanel"]["right"] = "Altoholic"
 	end
 
-
+	--Layout: DPS
 	if layout == "dps" or layout == "tank" then
 		--make some changes here
 		E.db["bags"]["itemLevelThreshold"] = 850
 		--Movers
+		E.db["movers"]["ElvUF_RaidMover"] = "TOPLEFT,ElvUIParent,BOTTOMLEFT,3,300"
+		E.db["movers"]["ElvUF_FocusMover"] = "TOP,ElvUIParent,TOP,212,-386"
+		E.db["movers"]["ElvUF_TargetMover"] = "TOP,ElvUIParent,TOP,212,-472"
+		E.db["movers"]["ElvUF_Raid40Mover"] = "TOPLEFT,ElvUIParent,BOTTOMLEFT,3,430"
+		E.db["movers"]["ElvUF_TargetCastbarMover"] = "TOP,ElvUIParent,TOP,212,-508"
+		E.db["movers"]["ElvUF_PlayerCastbarMover"] = "BOTTOM,ElvUIParent,BOTTOM,-11,401"
+		E.db["movers"]["ElvUF_PetMover"] = "BOTTOM,ElvUIParent,BOTTOM,-136,367"
+		E.db["movers"]["ElvUF_PartyMover"] = "TOPLEFT,ElvUIParent,BOTTOMLEFT,3,430"
+		E.db["movers"]["ElvUF_PetCastbarMover"] = "BOTTOM,ElvUIParent,BOTTOM,-135,393"
 		E.db["movers"]["RaidMarkerBarAnchor"] = "TOPLEFT,ElvUIParent,TOPLEFT,5,-369"
 		E.db["movers"]["ZoneAbility"] = "BOTTOM,ElvUIParent,BOTTOM,-170,3"
 		E.db["movers"]["VehicleSeatMover"] = "BOTTOM,ElvUIParent,BOTTOM,160,256"
@@ -926,25 +959,18 @@ local function SetupLayout(layout)
 		E.db["movers"]["ElvUIBagMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-205,2"
 		E.db["movers"]["RightChatMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,0,130"
 		E.db["movers"]["PetAB"] = "BOTTOM,ElvUIParent,BOTTOM,-136,320"
-		E.db["movers"]["ElvUF_RaidMover"] = "TOPLEFT,ElvUIParent,BOTTOMLEFT,3,300"
 		E.db["movers"]["GMMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,0,130"
-		E.db["movers"]["ElvUF_FocusMover"] = "TOP,ElvUIParent,TOP,212,-386"
-		E.db["movers"]["ClassBarMover"] = "BOTTOM,ElvUIParent,BOTTOM,0,402"
+		E.db["movers"]["ClassBarMover"] = "BOTTOM,ElvUIParent,BOTTOM,0,401"
 		E.db["movers"]["MicrobarMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-2,112"
-		E.db["movers"]["ElvUF_TargetMover"] = "TOP,ElvUIParent,TOP,212,-472"
 		E.db["movers"]["BNETMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,0,130"
-		E.db["movers"]["ElvUF_Raid40Mover"] = "TOPLEFT,ElvUIParent,BOTTOMLEFT,3,430"
-		E.db["movers"]["ElvUF_TargetCastbarMover"] = "TOP,ElvUIParent,TOP,212,-508"
-		E.db["movers"]["ElvUF_PlayerCastbarMover"] = "BOTTOM,ElvUIParent,BOTTOM,-11,402"
 		E.db["movers"]["TalkingHeadFrameMover"] = "BOTTOMLEFT,ElvUIParent,BOTTOMLEFT,3,171"
 		E.db["movers"]["UIErrorsFrameMover"] = "TOP,ElvUIParent,TOP,6,-432"
-		E.db["movers"]["TooltipMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,0,205"
+		E.db["movers"]["TooltipMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-1,91"
 		E.db["movers"]["BossHeaderMover"] = "BOTTOM,ElvUIParent,BOTTOM,212,368"
-		E.db["movers"]["ElvUF_PetMover"] = "BOTTOM,ElvUIParent,BOTTOM,-136,367"
-		E.db["movers"]["ElvUF_PartyMover"] = "TOPLEFT,ElvUIParent,BOTTOMLEFT,3,430"
+
 		E.db["movers"]["AlertFrameMover"] = "BOTTOM,ElvUIParent,BOTTOM,0,198"
 		E.db["movers"]["DebuffsMover"] = "BOTTOM,ElvUIParent,BOTTOM,166,237"
-		E.db["movers"]["ElvUF_PetCastbarMover"] = "BOTTOM,ElvUIParent,BOTTOM,-135,393"
+
 		--Auras
 		E.db["auras"]["debuffs"]["verticalSpacing"] = 3
 		E.db["auras"]["debuffs"]["maxWraps"] = 3
@@ -977,8 +1003,8 @@ local function SetupLayout(layout)
 		E.db["unitframe"]["units"]["pet"]["name"]["text_format"] = ""
 		E.db["unitframe"]["units"]["player"]["castbar"]["height"] = 22
 		E.db["unitframe"]["units"]["player"]["castbar"]["width"] = 176
-		E.db["unitframe"]["units"]["player"]["classbar"]["height"] = 8
-		E.db["unitframe"]["units"]["player"]["power"]["height"] = 8
+		E.db["unitframe"]["units"]["player"]["classbar"]["height"] = 7
+		E.db["unitframe"]["units"]["player"]["power"]["height"] = 7
 		E.db["unitframe"]["units"]["raid"]["debuffs"]["anchorPoint"] = "TOPRIGHT"
 		E.db["unitframe"]["units"]["raid"]["debuffs"]["perrow"] = 2
 		E.db["unitframe"]["units"]["raid"]["debuffs"]["sizeOverride"] = 16
@@ -1107,6 +1133,7 @@ local function SetupLayout(layout)
 				E.db["sle"]["unitframes"]["unit"]["target"]["auras"]["buffs"]["threshold"] = -1
 		end
 
+	--Layout: Healer
 	elseif layout == "healer" then
 		--make some changes here
 		E.db["bags"]["itemLevelThreshold"] = 900
@@ -1122,7 +1149,6 @@ local function SetupLayout(layout)
 		E.db["movers"]["ArenaHeaderMover"] = "BOTTOM,ElvUIParent,BOTTOM,-304,269"
 		E.db["movers"]["ElvUIBagMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-200,2"
 		E.db["movers"]["RightChatMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,0,0"
-		E.db["movers"]["PetAB"] = "BOTTOM,ElvUIParent,BOTTOM,-292,38"
 		E.db["movers"]["ElvUF_RaidMover"] = "TOPLEFT,ElvUIParent,BOTTOMLEFT,1141,612"
 		E.db["movers"]["GMMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-202,3"
 		E.db["movers"]["MirrorTimer3Mover"] = "BOTTOM,ElvUIParent,BOTTOM,-3,182"
@@ -1133,15 +1159,17 @@ local function SetupLayout(layout)
 		E.db["movers"]["BNETMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-200,4"
 		E.db["movers"]["ElvUF_Raid40Mover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMLEFT,1519,406"
 		E.db["movers"]["ElvUF_TargetCastbarMover"] = "BOTTOM,ElvUIParent,BOTTOM,168,347"
-		E.db["movers"]["ElvUF_PlayerCastbarMover"] = "BOTTOM,ElvUIParent,BOTTOM,-10,400"
+		E.db["movers"]["ElvUF_PlayerCastbarMover"] = "BOTTOM,ElvUIParent,BOTTOM,-11,400"
 		E.db["movers"]["TalkingHeadFrameMover"] = "BOTTOMLEFT,ElvUIParent,BOTTOMLEFT,0,170"
 		E.db["movers"]["UIErrorsFrameMover"] = "TOP,ElvUIParent,TOP,-3,-348"
-		E.db["movers"]["TooltipMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-1,76"
+		E.db["movers"]["TooltipMover"] = "BOTTOMRIGHT,ElvUIParent,BOTTOMRIGHT,-1,91"
 		E.db["movers"]["BossHeaderMover"] = "TOP,ElvUIParent,TOP,-289,-96"
-		E.db["movers"]["ElvUF_PetMover"] = "BOTTOM,ElvUIParent,BOTTOM,-318,118"
 		E.db["movers"]["ElvUF_PartyMover"] = "TOPLEFT,ElvUIParent,BOTTOMLEFT,1140,613"
 		E.db["movers"]["AlertFrameMover"] = "BOTTOM,ElvUIParent,BOTTOM,1,250"
 		E.db["movers"]["DebuffsMover"] = "BOTTOM,ElvUIParent,BOTTOM,166,279"
+		E.db["movers"]["PetAB"] = "BOTTOM,ElvUIParent,BOTTOM,-136,320"
+    E.db["movers"]["ElvUF_PetMover"] = "BOTTOM,ElvUIParent,BOTTOM,-136,367"
+    E.db["movers"]["ElvUF_PetCastbarMover"] = "BOTTOM,ElvUIParent,BOTTOM,-135,393"
 		--Auras
 		E.db["auras"]["debuffs"]["verticalSpacing"] = 20
 		--Nameplates
@@ -1178,9 +1206,9 @@ local function SetupLayout(layout)
 		E.db["unitframe"]["units"]["party"]["debuffs"]["perrow"] = 2
 		E.db["unitframe"]["units"]["party"]["GPSArrow"] = {}
 		E.db["unitframe"]["units"]["party"]["roleIcon"]["combatHide"] = true
-		E.db["unitframe"]["units"]["pet"]["enable"] = false
+		E.db["unitframe"]["units"]["pet"]["enable"] = true
 		E.db["unitframe"]["units"]["player"]["castbar"]["height"] = 23
-		E.db["unitframe"]["units"]["player"]["castbar"]["width"] = 175
+		E.db["unitframe"]["units"]["player"]["castbar"]["width"] = 176
 		E.db["unitframe"]["units"]["player"]["classbar"]["additionalPowerText"] = false
 		E.db["unitframe"]["units"]["player"]["classbar"]["height"] = 6
 		E.db["unitframe"]["units"]["player"]["power"]["height"] = 6
@@ -2288,7 +2316,7 @@ end
 --This is the data we pass on to the ElvUI Plugin Installer.
 --The Plugin Installer is reponsible for displaying the install guide for this layout.
 local InstallerData = {
-	Title = format("|cFFC79C6E%s's |cFFBABABAUI |cFFFFFFFF%s|r", modName, "Installation"),
+	Title = format("|cFFC79C6E%s's |cFFBABABAUI|r |cFFFFFFFF%s|r", modName, "Installation"),
 	Name = modName,
 	tutorialImage = "Interface\\AddOns\\ElvUI_Souschef\\logo_sui.tga",
 	--tutorialImage = "Interface\\AddOns\\MyAddOn\\logo.tga", --If you have a logo you want to use, otherwise it uses the one from ElvUI
@@ -2319,7 +2347,7 @@ local InstallerData = {
 		[3] = function()
 			PluginInstallFrame.SubTitle:SetText("Aura and Name Plate Filters")
 			PluginInstallFrame.Desc1:SetText("This step will apply my custom Aura and Name Plate Filters")
-			PluginInstallFrame.Desc2:SetText("|cFFEE4545Please note that this will replace any filters you already have in place. If you wish to keep your own filters, please skip this step.")
+			PluginInstallFrame.Desc2:SetText("|cFFEE4545Please note that this will replace any filters you already have in place. \n If you'd like to keep your own filters, please skip this step.")
 			PluginInstallFrame.Desc3:SetText("Importance: |cff07D400Low|r")
 			PluginInstallFrame.Option1:Show()
 			PluginInstallFrame.Option1:SetScript("OnClick", function() Filters() end)
@@ -2345,7 +2373,7 @@ local InstallerData = {
 		[5] = function()
 			PluginInstallFrame.SubTitle:SetText(L["Chat"])
 			PluginInstallFrame.Desc1:SetText(format(L["This step changes your chat windows and positions them all in the left chat panel. These changes are tailored to the needs of the author of %s and are not necessary for this edit to function."], modName))
-			PluginInstallFrame.Desc2:SetText(L["Please click the button below to setup your chat windows."])
+			PluginInstallFrame.Desc2:SetText(L["|cFFEE4545Please note that using this will overwrite the existing Chat Tab settings."])
 			PluginInstallFrame.Desc3:SetText(L["Importance: |cffFF0000Low|r"])
 			PluginInstallFrame.Option1:Show()
 			PluginInstallFrame.Option1:SetScript("OnClick", SetupChat)
