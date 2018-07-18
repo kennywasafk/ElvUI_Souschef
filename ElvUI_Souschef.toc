@@ -1,6 +1,6 @@
-## Interface: 70300
+## Interface: 80000
 ## Author: Except
-## Version: 1.03
+## Version: 1.03a
 ## Title: |cff1784d1ElvUI|r |cff4beb2cSouschef|r
 ## Notes: Contains layouts from Souschef
 ## RequiredDeps: ElvUI
