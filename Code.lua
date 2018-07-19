@@ -980,7 +980,7 @@ local function SetupLayout(layout)
 	--Layout: DPS
 	if layout == "dps" or layout == "tank" then
 		--make some changes here
-		E.db["bags"]["itemLevelThreshold"] = 850
+		E.db["bags"]["itemLevelThreshold"] = 180
 		--Movers
 		E.db["movers"]["ElvUF_RaidMover"] = "TOPLEFT,ElvUIParent,BOTTOMLEFT,3,300"
 		E.db["movers"]["ElvUF_FocusMover"] = "BOTTOM,ElvUIParent,BOTTOM,212,323"
@@ -1202,7 +1202,7 @@ local function SetupLayout(layout)
 	--Layout: Healer
 	elseif layout == "healer" then
 		--make some changes here
-		E.db["bags"]["itemLevelThreshold"] = 900
+		E.db["bags"]["itemLevelThreshold"] = 180
 		--movers
 		E.db["movers"]["RaidMarkerBarAnchor"] = "BOTTOMLEFT,ElvUIParent,BOTTOMLEFT,0,381"
 		E.db["movers"]["ZoneAbility"] = "BOTTOM,ElvUIParent,BOTTOM,-171,2"
