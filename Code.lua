@@ -747,9 +747,6 @@ local function SetupLayout(layout)
 			E.db["sle"]["unitframes"]["unit"]["player"]["rested"] = {}
 			E.db["sle"]["unitframes"]["unit"]["player"]["rested"]["xoffset"] = -9
 			E.db["sle"]["unitframes"]["unit"]["player"]["rested"]["yoffset"] = -15
-		E.db["sle"]["Armory"]["Character"]["Artifact"]["Font"] = "HaxrCorp12cyr"
-		E.db["sle"]["Armory"]["Character"]["Artifact"]["FontSize"] = 15
-		E.db["sle"]["Armory"]["Character"]["Artifact"]["FontStyle"] = "MONOCHROMEOUTLINE"
 		E.db["sle"]["Armory"]["Character"]["Backdrop"]["Overlay"] = false
 		E.db["sle"]["Armory"]["Character"]["Backdrop"]["SelectedBG"] = "HIDE"
 		E.db["sle"]["Armory"]["Character"]["Durability"]["Display"] = "DamagedOnly"
@@ -793,17 +790,10 @@ local function SetupLayout(layout)
 		E.db["sle"]["Armory"]["Inspect"]["Level"]["FontSize"] = 17
 		E.db["sle"]["Armory"]["Inspect"]["Level"]["FontStyle"] = "MONOCHROMEOUTLINE"
 		E.db["sle"]["Armory"]["Inspect"]["NoticeMissing"] = false
-		E.db["sle"]["bags"]["artifactPower"]["enable"] = true
-		E.db["sle"]["bags"]["artifactPower"]["short"] = true
-		E.db["sle"]["bags"]["artifactPower"]["fonts"]["font"] = "HaxrCorp12cyr"
-		E.db["sle"]["bags"]["artifactPower"]["fonts"]["outline"] = "MONOCHROMEOUTLINE"
-		E.db["sle"]["bags"]["artifactPower"]["fonts"]["size"] = 15
 		E.db["sle"]["chat"]["dpsSpam"] = true
 		E.db["sle"]["chat"]["invite"]["altInv"] = true
 		E.db["sle"]["chat"]["tab"]["select"] = true
 		E.db["sle"]["chat"]["tab"]["style"] = "SQUARE"
-		E.db["sle"]["databars"]["artifact"]["chatfilter"]["enable"] = true
-		E.db["sle"]["databars"]["artifact"]["chatfilter"]["style"] = "STYLE2"
 		E.db["sle"]["databars"]["honor"]["chatfilter"]["awardStyle"] = "STYLE2"
 		E.db["sle"]["databars"]["honor"]["chatfilter"]["enable"] = true
 		E.db["sle"]["databars"]["honor"]["chatfilter"]["style"] = "STYLE2"
