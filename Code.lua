@@ -301,7 +301,7 @@ local function SetupLayout(layout)
 	E.db["movers"]["ElvUF_RaidpetMover"] = "TOPLEFT,ElvUIParent,BOTTOMLEFT,4,736"
 	E.db["movers"]["ElvUF_TargetTargetMover"] = "BOTTOM,ElvUIParent,BOTTOM,132,115"
 	E.db["movers"]["ElvUF_FocusCastbarMover"] = "TOP,ElvUIParent,TOP,6,-477"
-	E.db["movers"]["ReputationBarMover"] = "TOPLEFT,ElvUIParent,TOPLEFT,6,-199"
+	E.db["movers"]["ReputationBarMover"] = "TOPLEFT,ElvUIParent,TOPLEFT,6,-135"
 	E.db["movers"]["ObjectiveFrameMover"] = "TOPRIGHT,ElvUIParent,TOPRIGHT,-60,-88"
 	E.db["movers"]["ShiftAB"] = "TOPLEFT,ElvUIParent,BOTTOMLEFT,0,194"
 	E.db["movers"]["ElvUF_AssistMover"] = "TOPLEFT,ElvUIParent,BOTTOMLEFT,397,284"
@@ -330,7 +330,7 @@ local function SetupLayout(layout)
 	E.db["movers"]["ElvAB_6"] = "TOPLEFT,ElvUIParent,TOPLEFT,7,-145"
 	E.db["movers"]["MinimapMover"] = "TOPLEFT,ElvUIParent,TOPLEFT,7,-6"
 	E.db["movers"]["SquareMinimapBar"] = "TOPLEFT,ElvUIParent,TOPLEFT,138,-5"
-	E.db["movers"]["ArtifactBarMover"] = "TOPLEFT,ElvUIParent,TOPLEFT,6,-135"
+
 	--Tooltip
 	E.db["tooltip"]["itemCount"] = "BOTH"
 	E.db["tooltip"]["healthBar"]["height"] = 3
@@ -364,11 +364,6 @@ local function SetupLayout(layout)
 	E.db["auras"]["debuffs"]["size"] = 26
 	E.db["auras"]["debuffs"]["growthDirection"] = "RIGHT_DOWN"
 	--Databars
-	E.db["databars"]["artifact"]["height"] = 7
-	E.db["databars"]["artifact"]["hideInCombat"] = false
-	E.db["databars"]["artifact"]["orientation"] = "HORIZONTAL"
-	E.db["databars"]["artifact"]["textSize"] = 22
-	E.db["databars"]["artifact"]["width"] = 130
 	E.db["databars"]["experience"]["height"] = 7
 	E.db["databars"]["experience"]["orientation"] = "HORIZONTAL"
 	E.db["databars"]["experience"]["width"] = 263
@@ -380,7 +375,7 @@ local function SetupLayout(layout)
 	E.db["databars"]["honor"]["reverseFill"] = true
 	E.db["databars"]["honor"]["width"] = 130
 	E.db["databars"]["reputation"]["height"] = 7
-	E.db["databars"]["reputation"]["hideInCombat"] = true
+	E.db["databars"]["reputation"]["hideInCombat"] = false
 	E.db["databars"]["reputation"]["orientation"] = "HORIZONTAL"
 	E.db["databars"]["reputation"]["reverseFill"] = false
 	E.db["databars"]["reputation"]["width"] = 130
